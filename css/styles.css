@@ -1,0 +1,94 @@
+#products {
+	width: 100%;
+	position: relative;
+}
+
+#products .name {
+	width: 60%;
+}
+
+#products .manufacture {
+	width: 15%;
+}
+
+#products .color {
+	width: 15%;
+}
+
+#products .memory {
+	width: 10%;
+}
+
+#products thead tr {
+	background-color: #D1F1FF;
+}
+
+#products tbody tr:nth-child(even) {
+	background-color: #fafafa;
+}
+
+.criteriaBox {
+	border: 1px solid #ddd;
+	margin: 10px 0;
+	background-color: #fbfbfb;
+}
+
+.criteriaBox label {
+	display: block;
+	font-weight: normal;
+	padding: 8px 30px 3px 30px;
+	margin: 0;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.criteriaBox label:last-child {
+	border-bottom: none;
+}
+
+.criteriaBox label:hover {
+	background-color: #F7F7F7;
+}
+
+.criteriaBox h5 {
+	font-weight: bold;
+	text-transform: capitalize;
+	background-color: #D1F1FF;
+	margin: 0;
+	padding: 7px;
+	cursor: default;
+	border-bottom: 1px solid #ddd;
+}
+
+.criteriaBox label .badge {
+	float: right;
+	min-width: 30px;
+	font-weight: normal;
+	background-color: #C3C3C3;
+}
+
+/*=======================================================*/
+
+ .ng-enter, 
+ .ng-leave { 
+  -webkit-transition: 400ms linear all;
+  -moz-transition: 400ms linear all;
+  -ms-transition: 400ms linear all;
+  -o-transition: 400ms linear all;
+  transition: 400ms linear all;
+  position: relative;
+  display: block;
+} 
+ 
+ .ng-enter.ng-enter-active, 
+ .ng-leave {
+  opacity: 1;
+  top: 0;
+  height: 30px;
+}
+ 
+ .ng-leave.ng-leave-active,
+ .ng-enter {
+  opacity: 0;
+  top: -30px;
+  height: 0px;
+}

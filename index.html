@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="productsAppFilter">
+<head>
+    <meta charset="UTF-8">
+    <title>Filters</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </head>
+  <body ng-controller="ProductsFilterCtrl">
+
+  <div class="container">
+    <h3>Products filter</h3>
+    <div class="row">
+    <section class="col-md-4">  
+        <input type="text" class="form-control" placeholder="Search by name ..." ng-model="search.name"/>
+        <div class="criteriaBox" ng-repeat="(key, arrValue) in filterCriteria">
+            <h5>{{key}}</h5>
+            <label ng-repeat="item in arrValue">
+                <input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}
+                <span class="badge">{{ (displayProducts | filter:count(item, key)).length }}</span>
+            </label>
+        </div>
+    </section>
+
+    <section class="col-md-8">
+        <table id="products" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    <th class="manufacture">Manufacture</th>
+                    <th class="color">Color</th>
+                    <th class="memory">Memory</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-animate="'animate'" ng-repeat="item in displayProducts | filter:search:strict">
+                    <td>{{item.name}}</td>
+                    <td>{{item.manufacture}}</td>
+                    <td>{{item.color}}</td>
+                    <td>{{item.memory}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+  </div>
+  </div>
+
+  </body>
+</html>
