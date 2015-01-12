@@ -1,2 +1,2 @@
-ngFilter-products
-=================
+# Angular-filter-products
+angular, animation, filters
